@@ -35,12 +35,15 @@
                   </li>
                   <li>
                     <a
-                      href="https://masteringbackend.com/books?ref=hubs&utm_source=hubs&utm_medium=hubs&utm_campaign=footer"
+                      href="/books?ref=hubs&utm_source=hubs&utm_medium=hubs&utm_campaign=footer"
                       >Books</a
                     >
                   </li>
                   <li>
-                    <nuxt-link to="/">Hubs</nuxt-link>
+                    <nuxt-link
+                      to="/?ref=hubs&utm_source=hubs&utm_medium=hubs&utm_campaign=footer"
+                      >Hubs</nuxt-link
+                    >
                   </li>
                   <li>
                     <a

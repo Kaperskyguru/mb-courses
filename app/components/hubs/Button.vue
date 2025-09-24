@@ -1,6 +1,6 @@
 <template>
   <!-- NuxtLink / External Link -->
-  <div v-if="props.type.includes('link')">
+  <div v-if="type.includes('link')">
     <!-- <NuxtLink
       v-if="typeof props.link === 'string' && !props.link.includes('http')"
       :to="props.link"
@@ -24,15 +24,15 @@
     </NuxtLink> -->
 
     <a
-      :href="props.link"
+      :href="link"
       :class="['btn', classNames]"
-      :style="props.customStyle"
-      :disabled="props.disabled || props.waiting"
-      :aria-label="props.waiting ? 'Please wait…' : undefined"
+      :style="customStyle"
+      :disabled="disabled || waiting"
+      :aria-label="waiting ? 'Please wait…' : undefined"
       v-bind="attrs"
       v-on="listeners"
     >
-      <div v-if="props.waiting" class="custom-icon" role="presentation">
+      <div v-if="waiting" class="custom-icon" role="presentation">
         <SvgLoader class="-my-px" />
       </div>
 
@@ -49,14 +49,14 @@
   <button
     v-else
     :class="['btn', classNames]"
-    :style="props.customStyle"
-    :disabled="props.disabled || props.waiting"
-    :aria-label="props.waiting ? 'Please wait…' : undefined"
+    :style="customStyle"
+    :disabled="disabled || waiting"
+    :aria-label="waiting ? 'Please wait…' : undefined"
     style="outline: none !important"
     v-bind="attrs"
     v-on="listeners"
   >
-    <div v-if="props.waiting" class="custom-icon" role="presentation">
+    <div v-if="waiting" class="custom-icon" role="presentation">
       <SvgLoader class="-my-px" />
     </div>
 

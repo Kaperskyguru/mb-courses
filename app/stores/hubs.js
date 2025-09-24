@@ -27,8 +27,8 @@ export const useHubsStore = defineStore('hubs', {
     getHubBySlug: (state) => (slug) =>
       state.hubs?.find((hub) => hub.slug === slug),
     // getHubs: (state) => () => state.hubs,
-    getPDFs: (state) => () => state.pdfs,
-    getBooks: (state) => () => state.books,
+    getAllPDFs: (state) => () => state.pdfs,
+    getAllBooks: (state) => () => state.books,
     getCourses: (state) => () => state.courses,
     getRecentHubs: (state) => () => state.recent_hubs,
     getCategoryHubs: (state) => () => state.category_hubs,

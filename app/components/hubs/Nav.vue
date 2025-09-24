@@ -60,9 +60,7 @@
             }"
           >
             <a
-              :href="`https://masteringbackend.com/books?ref=${
-                $route.query?.ref ?? 'hubs'
-              }`"
+              :href="`/books?ref=${$route.query?.ref ?? 'hubs'}`"
               class="text-gray-600 text-sm font-medium hover:text-[#0a083b] transition-colors"
               >Books</a
             >

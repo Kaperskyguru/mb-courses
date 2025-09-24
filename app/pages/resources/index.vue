@@ -5,68 +5,68 @@
     :hubs="hubs"
   />
 </template>
-  
-  <script>
-export default {
-  name: 'HubIndex',
-  layout: 'hub',
 
-  async asyncData({ query, store }) {
-    try {
-      const getPDFs = store.getters['hubs/getPDFs']
-      let hubs = await getPDFs()
-      if (!hubs?.length) {
-        const data = {}
-        data.page = query.page ? query.page : 1
-        data.count = 22
-        hubs = await store.dispatch('hubs/getPDFs', {
-          ...data,
-          populate: {
-            image: true,
-            chapters: {
-              populate: {
-                posts: true,
-              },
+<script setup>
+import { useHubsStore } from '~/stores/hubs'
+
+const route = useRoute()
+const store = useHubsStore()
+
+// Async data fetching
+const { data: hubs } = await useAsyncData('hubs-resources', async () => {
+  try {
+    let hubs = store.getAllPDFs
+
+    if (!hubs?.length) {
+      const data = {
+        page: route.query.page ? route.query.page : 1,
+        count: 22,
+        populate: {
+          image: true,
+          chapters: {
+            populate: {
+              posts: true,
             },
           },
-        })
+        },
       }
-      return { hubs }
-    } catch (error) {
-      const hubs = []
-      return { hubs }
+      hubs = await store.getPDFs(data)
     }
-  },
+    return hubs
+  } catch (error) {
+    return []
+  }
+})
 
-  head() {
-    return {
-      title: 'Resources',
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: `A great resource for backend engineers. Next-level Backend Engineering training and Exclusive resources.`,
-        },
-        {
-          hid: 'og:title',
-          property: 'og:title',
-          content: `A great resource for backend engineers. Next-level Backend Engineering training and Exclusive resources.`,
-        },
-        {
-          hid: 'og:description',
-          property: 'og:description',
-          content: `A great resource for backend engineers. Next-level Backend Engineering training and Exclusive resources.`,
-        },
-        {
-          hid: 'twitter:card',
-          name: 'twitter:card',
-          content: 'summary_large_image',
-        },
-      ],
-    }
-  },
-}
+useHead({
+  title: 'Resources',
+  meta: [
+    {
+      hid: 'description',
+      name: 'description',
+      content:
+        'A great resource for backend engineers. Next-level Backend Engineering training and Exclusive resources.',
+    },
+    {
+      hid: 'og:title',
+      property: 'og:title',
+      content:
+        'A great resource for backend engineers. Next-level Backend Engineering training and Exclusive resources.',
+    },
+    {
+      hid: 'og:description',
+      property: 'og:description',
+      content:
+        'A great resource for backend engineers. Next-level Backend Engineering training and Exclusive resources.',
+    },
+    {
+      hid: 'twitter:card',
+      name: 'twitter:card',
+      content: 'summary_large_image',
+    },
+  ],
+})
 </script>
-  
-  <style scoped>
+
+<style scoped>
 </style>

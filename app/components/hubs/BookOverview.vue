@@ -9,16 +9,17 @@
           </h1>
 
           <p class="text-xl">{{ description }}</p>
-          <div class="gradient"></div>
+          <div class="gradient top-0"></div>
 
           <div class="py-3" v-if="!slug.includes('design-patterns')">
             <Button
               v-if="!activateDownload"
               :custom-style="{ backgroundColor: color, color: '#fff' }"
               size="large"
-              class="py-2 my-2 text-xl font-bold"
-              type="link"
+              class="py-2 my-2 text-xl font-bold text-white"
               :link="link"
+              type="link"
+              target="_blank"
             >
               {{ isPremium ? 'Grab Your Copy Now' : 'Read Online' }}
             </Button>
@@ -56,6 +57,75 @@
               :slug="slug"
             />
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="w-full bg-[#f3f6fa]">
+    <div class="py-12 container mx-auto">
+      <!-- Section Title -->
+      <div class="my-10 text-center">
+        <h2 class="text-[50px] leading-[65px] font-extrabold text-gray-900">
+          Take a peek inside
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        <!-- Left: Book Cover -->
+        <div class="flex justify-center">
+          <div class="shadow-lg border rounded-lg p-6 my-4 max-w-md w-full">
+            <img
+              class="w-full h-auto object-contain rounded"
+              :src="animatedBookCover"
+              :alt="title"
+            />
+          </div>
+        </div>
+
+        <!-- Right: Content -->
+        <div>
+          <h3
+            class="text-[40px] leading-[58.5px] font-bold text-[#121127] py-4"
+          >
+            {{ title }}
+          </h3>
+
+          <p class="text-[#121127]">
+            {{ content }}
+          </p>
+
+          <hr class="my-6 border-gray-300" />
+
+          <!-- Chapters -->
+          <h3
+            v-if="chapters?.length"
+            class="my-4 text-xl font-semibold text-gray-900"
+          >
+            What to expect?
+          </h3>
+
+          <ul class="space-y-3">
+            <li
+              v-for="(outline, i) in chapters"
+              :key="i"
+              class="flex items-center gap-3 text-lg text-[#121127]"
+            >
+              <!-- Play Icon -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                :fill="color"
+                width="24"
+                height="24"
+              >
+                <path fill="none" d="M0 0h24v24H0z" />
+                <path d="M16 12l-6 6V6z" />
+              </svg>
+
+              <span>{{ outline.title }}</span>
+            </li>
+          </ul>
         </div>
       </div>
     </div>

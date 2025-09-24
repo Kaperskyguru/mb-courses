@@ -5,68 +5,59 @@
     :hubs="books"
   />
 </template>
-    
-    <script>
-export default {
-  name: 'HubIndex',
+
+<script setup>
+import { useRoute } from 'vue-router'
+import { useHubsStore } from '~/stores/hubs'
+
+definePageMeta({
   layout: 'hub',
+})
 
-  async asyncData({ query, store }) {
-    try {
-      const getBooks = store.getters['hubs/getBooks']
-      let books = await getBooks()
-      if (!books?.length) {
-        const data = {}
-        data.page = query.page ? query.page : 1
-        data.count = 22
-        books = await store.dispatch('hubs/getBooks', {
-          ...data,
+const route = useRoute()
+const hubsStore = useHubsStore()
+
+const { data: books } = await useAsyncData(`books`, async () => {
+  let hubs = hubsStore.getAllBooks()
+
+  console.log(hubs)
+
+  if (!hubs.length) {
+    hubs = await hubsStore.getBooks({
+      slug: route.params.hub,
+      populate: {
+        image: true,
+        chapters: {
           populate: {
-            image: true,
-            chapters: {
-              populate: {
-                posts: true,
-              },
-            },
+            posts: true,
           },
-        })
-      }
-      return { books }
-    } catch (error) {
-      const books = []
-      return { books }
-    }
-  },
+        },
+      },
+    })
+  }
 
-  head() {
-    return {
-      title: 'Backend Engineering Books',
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: `Access to a catalog of backend books, backend development books, advanced backend engineering books, nestjs books and backend web development books. Next-level Backend Engineering books and Exclusive resources.`,
-        },
-        {
-          hid: 'og:title',
-          property: 'og:title',
-          content: `Access to a catalog of backend books, backend development books, advanced backend engineering books, nestjs books and backend web development books. Next-level Backend Engineering books and Exclusive resources.`,
-        },
-        {
-          hid: 'og:description',
-          property: 'og:description',
-          content: `Access to a catalog of backend books, backend development books, advanced backend engineering books, nestjs books and backend web development books. Next-level Backend Engineering books and Exclusive resources.`,
-        },
-        {
-          hid: 'twitter:card',
-          name: 'twitter:card',
-          content: 'summary_large_image',
-        },
-      ],
-    }
-  },
-}
+  return hubs
+})
+
+useHead({
+  title: 'Backend Engineering Books',
+  meta: [
+    {
+      name: 'description',
+      content: `Access to a catalog of backend books, backend development books, advanced backend engineering books, nestjs books and backend web development books. Next-level Backend Engineering books and Exclusive resources.`,
+    },
+    {
+      property: 'og:title',
+      content: `Access to a catalog of backend books, backend development books, advanced backend engineering books, nestjs books and backend web development books. Next-level Backend Engineering books and Exclusive resources.`,
+    },
+    {
+      property: 'og:description',
+      content: `Access to a catalog of backend books, backend development books, advanced backend engineering books, nestjs books and backend web development books. Next-level Backend Engineering books and Exclusive resources.`,
+    },
+    {
+      name: 'twitter:card',
+      content: 'summary_large_image',
+    },
+  ],
+})
 </script>
-    
-    <style scoped>
-</style>
