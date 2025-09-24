@@ -245,7 +245,7 @@ const props = defineProps({
   },
   title: {
     type: String,
-    default: 'Welcome To Our Content Hub',
+    default: 'Welcome To Backend Hub',
   },
   hubs: {
     type: Array,
