@@ -21,13 +21,30 @@
               <div class="w-1/2 md:w-1/4 text-white">
                 <p class="mb-4">Learn</p>
                 <ul class="space-y-3 text-[1.1rem] font-light">
-                  <li><NuxtLink to="/posts">Blog</NuxtLink></li>
-                  <li><NuxtLink to="/courses">Courses</NuxtLink></li>
-                  <li><NuxtLink to="/books">Books</NuxtLink></li>
-                  <li><NuxtLink to="/">Hubs</NuxtLink></li>
                   <li>
                     <a
-                      href="https://store.masteringbackend.com?ref=masteringbackend&utm_source=masteringbackend&utm_medium=blog&utm_campaign=footer"
+                      href="https://blog.masteringbackend.com/?ref=hubs&utm_source=hubs&utm_medium=hubs&utm_campaign=footer"
+                      >Blog</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://masteringbackend.com/courses?ref=hubs&utm_source=hubs&utm_medium=hubs&utm_campaign=footer"
+                      >Courses</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://masteringbackend.com/books?ref=hubs&utm_source=hubs&utm_medium=hubs&utm_campaign=footer"
+                      >Books</a
+                    >
+                  </li>
+                  <li>
+                    <nuxt-link to="/">Hubs</nuxt-link>
+                  </li>
+                  <li>
+                    <a
+                      href="https://store.masteringbackend.com?ref=hubs&utm_source=hubs&utm_medium=hubs&utm_campaign=footer"
                       >Our Store</a
                     >
                   </li>
@@ -41,21 +58,21 @@
                   <li>
                     <a
                       target="_blank"
-                      :href="`https://app.masteringbackend.com?ref=masteringbackend&utm_source=masteringbackend&utm_medium=blog&utm_campaign=footer`"
+                      :href="`https://app.masteringbackend.com?ref=hubs&utm_source=hubs&utm_medium=hubs&utm_campaign=footer`"
                       >MB Platform</a
                     >
                   </li>
                   <li>
                     <a
                       target="_blank"
-                      :href="`https://playground.masteringbackend.com?ref=masteringbackend&utm_source=masteringbackend&utm_medium=blog&utm_campaign=footer`"
+                      :href="`https://playground.masteringbackend.com?ref=hubs&utm_source=hubs&utm_medium=hubs&utm_campaign=footer`"
                       >Code Playground</a
                     >
                   </li>
                   <li>
                     <a
                       target="_blank"
-                      :href="`https://getbackendjobs.com?ref=masteringbackend&utm_source=masteringbackend&utm_medium=blog&utm_campaign=footer`"
+                      :href="`https://getbackendjobs.com?ref=hubs&utm_source=hubs&utm_medium=hubs&utm_campaign=footer`"
                       >Get Backend Jobs</a
                     >
                   </li>
@@ -65,7 +82,7 @@
                   <li>
                     <a
                       target="_blank"
-                      href="https://projects.masteringbackend.com?ref=masteringbackend&utm_source=masteringbackend&utm_medium=blog&utm_campaign=footer"
+                      href="https://projects.masteringbackend.com?ref=hubs&utm_source=hubs&utm_medium=hubs&utm_campaign=footer"
                       >Access 200+ Backend Projects</a
                     >
                   </li>
@@ -79,28 +96,39 @@
                   <li>
                     <a
                       target="_blank"
-                      :href="`https://app.masteringbackend.com?ref=masteringbackend&utm_source=masteringbackend&utm_medium=blog&utm_campaign=footer`"
+                      :href="`https://app.masteringbackend.com?ref=hubs&utm_source=hubs&utm_medium=hubs&utm_campaign=footer`"
                       >Learn Backend Free</a
                     >
                   </li>
                   <li>
-                    <NuxtLink to="/newsletter">Join Our Newsletter</NuxtLink>
+                    <NuxtLink
+                      to="https://masteringbackend.com/newsletter?ref=hubs&utm_source=hubs&utm_medium=hubs&utm_campaign=footer"
+                      >Join Our Newsletter</NuxtLink
+                    >
                   </li>
                   <li>
-                    <NuxtLink to="/community">Join Our Community</NuxtLink>
+                    <NuxtLink
+                      to="https://masteringbackend.com/community?ref=hubs&utm_source=hubs&utm_medium=hubs&utm_campaign=footer"
+                      >Join Our Community</NuxtLink
+                    >
                   </li>
-                  <li><NuxtLink to="/academy">Join The Academy</NuxtLink></li>
+                  <li>
+                    <NuxtLink
+                      to="https://masteringbackend.com/academy?ref=hubs&utm_source=hubs&utm_medium=hubs&utm_campaign=footer"
+                      >Join The Academy</NuxtLink
+                    >
+                  </li>
                   <li>
                     <a
                       target="_blank"
-                      href="https://backendweekly.dev/podcasts?ref=masteringbackend&utm_source=masteringbackend&utm_medium=blog&utm_campaign=footer"
+                      href="https://backendweekly.dev/podcasts?ref=hubs&utm_source=hubs&utm_medium=hubs&utm_campaign=footer"
                       >Listen to GBE Podcast</a
                     >
                   </li>
                   <li>
                     <a
                       target="_blank"
-                      href="https://masteringbackend.featurebase.app/?ref=masteringbackend&utm_source=masteringbackend&utm_medium=blog&utm_campaign=footer"
+                      href="https://masteringbackend.featurebase.app/?ref=hubs&utm_source=hubs&utm_medium=hubs&utm_campaign=footer"
                       >Add or Vote for the next Course</a
                     >
                   </li>
@@ -111,9 +139,24 @@
               <div class="w-1/2 md:w-1/4 text-white mt-6 md:mt-0">
                 <p class="mb-4">Company</p>
                 <ul class="space-y-3 text-[1.1rem] font-light">
-                  <li><NuxtLink to="/">Home</NuxtLink></li>
-                  <li><NuxtLink to="/about">About</NuxtLink></li>
-                  <li><NuxtLink to="/contact">Contact</NuxtLink></li>
+                  <li>
+                    <a
+                      href="https://masteringbackend.com/?ref=hubs&utm_source=hubs&utm_medium=hubs&utm_campaign=footer"
+                      >Home</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://masteringbackend.com/about?ref=hubs&utm_source=hubs&utm_medium=hubs&utm_campaign=footer"
+                      >About</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="https://masteringbackend.com/contact?ref=hubs&utm_source=hubs&utm_medium=hubs&utm_campaign=footer"
+                      >Contact</a
+                    >
+                  </li>
                 </ul>
               </div>
             </div>
@@ -159,13 +202,25 @@
 
         <!-- Links -->
         <div class="mt-4 text-sm">
-          <nuxt-link to="/terms-and-conditions">Terms and Conditions</nuxt-link>
+          <a
+            href="https://masteringbackend.com/terms-and-conditions?ref=hubs&utm_source=hubs&utm_medium=hubs&utm_campaign=footer"
+            >Terms and Conditions</a
+          >
           |&nbsp;
-          <nuxt-link to="/privacy-policy">Privacy</nuxt-link>
+          <a
+            href="https://masteringbackend.com/privacy-policy?ref=hubs&utm_source=hubs&utm_medium=hubs&utm_campaign=footer"
+            >Privacy</a
+          >
           |&nbsp;
-          <nuxt-link to="/disclaimer">Disclaimer</nuxt-link>
+          <a
+            href="https://masteringbackend.com/disclaimer?ref=hubs&utm_source=hubs&utm_medium=hubs&utm_campaign=footer"
+            >Disclaimer</a
+          >
           |&nbsp;
-          <nuxt-link to="/return-policy">Return Policy</nuxt-link>
+          <a
+            href="https://masteringbackend.com/return-policy?ref=hubs&utm_source=hubs&utm_medium=hubs&utm_campaign=footer"
+            >Return Policy</a
+          >
         </div>
 
         <!-- Recaptcha -->

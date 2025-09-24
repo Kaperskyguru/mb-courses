@@ -26,11 +26,13 @@
             class="relative pr-7"
             :class="{
               'font-bold text-transparent bg-clip-text bg-[#0a083b]':
-                isActive('/posts'),
+                isActive('/'),
             }"
           >
             <a
-              :href="`/posts?ref=${$route.query?.ref ?? 'homepage'}`"
+              :href="`https://blog.masteringbackend.com/?ref=${
+                $route.query?.ref ?? 'hubs'
+              }`"
               class="text-gray-600 text-sm font-medium hover:text-[#0a083b] transition-colors"
               >Blog</a
             >
@@ -43,7 +45,9 @@
             }"
           >
             <a
-              :href="`/courses?ref=${$route.query?.ref ?? 'homepage'}`"
+              :href="`https://masteringbackend.com/courses?ref=${
+                $route.query?.ref ?? 'hubs'
+              }`"
               class="text-gray-600 text-sm font-medium hover:text-[#0a083b] transition-colors"
               >Courses</a
             >
@@ -56,7 +60,9 @@
             }"
           >
             <a
-              :href="`/books?ref=${$route.query?.ref ?? 'homepage'}`"
+              :href="`https://masteringbackend.com/books?ref=${
+                $route.query?.ref ?? 'hubs'
+              }`"
               class="text-gray-600 text-sm font-medium hover:text-[#0a083b] transition-colors"
               >Books</a
             >
@@ -68,10 +74,10 @@
                 isActive('/'),
             }"
           >
-            <a
-              :href="`/?ref=${$route.query?.ref ?? 'homepage'}`"
+            <nuxt-link
+              href="/"
               class="text-gray-600 text-sm font-medium hover:text-[#0a083b] transition-colors"
-              >Hubs</a
+              >Hubs</nuxt-link
             >
           </li>
           <li
@@ -84,7 +90,7 @@
             <a
               class="text-gray-600 text-sm font-medium hover:text-[#0a083b] transition-colors"
               target="_blank"
-              href="https://backendweekly.dev/podcasts?ref=masteringbackend&utm_source=masteringbackend&utm_medium=blog&utm_campaign=footer"
+              href="https://backendweekly.dev/podcasts?ref=hubs&utm_source=hubs&utm_medium=hubs&utm_campaign=footer"
               >Podcasts</a
             >
           </li>
@@ -104,7 +110,9 @@
             }"
           >
             <a
-              :href="`/community?ref=${$route.query?.ref ?? 'homepage'}`"
+              :href="`https://masteringbackend.com/community?ref=${
+                $route.query?.ref ?? 'hubs'
+              }`"
               class="text-gray-600 text-sm font-medium hover:text-[#0a083b] transition-colors"
               >Community</a
             >
@@ -115,7 +123,7 @@
           <a
             target="_blank"
             :href="`https://app.masteringbackend.com?ref=${
-              $route.query?.ref ?? 'homepage'
+              $route.query?.ref ?? 'hubs'
             }`"
             class="bg-[#0e1f33] !text-white rounded-lg px-3 py-3 transition-colors"
           >
@@ -142,56 +150,3 @@ export default {
   },
 }
 </script>
-
-<style scoped>
-/* .navbar .navbar-nav .nav-item a {
-  font-size: 1rem;
-  font-weight: 500;
-}
-
-.navbar .nav-item::after {
-  content: '';
-  width: 0;
-  height: 4px;
-  display: block;
-  background-color: var(--primary-color);
-  transition: all 0.3s ease;
-}
-
-.navbar .nav-item:hover::after {
-  width: 100%;
-}
-
-.navbar .nav-item {
-  padding-right: 30px;
-}
-
-.navbar .navbar-nav .active a {
-  background-color: #0a083b;
-  -webkit-background-clip: text;
-  background-clip: text;
-  background: text;
-  font-weight: bold;
-}
-
-.navbar .navbar-nav .nav-item a:hover {
-  color: #0a083b;
-}
-
-.nav-link {
-  color: #57586e;
-  font-size: 0.8rem;
-}
-
-.start-btn {
-  background: #191489;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-}
-
-.start-btn:hover {
-  background-color: #2119ad;
-} */
-</style>
