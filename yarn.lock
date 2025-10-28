@@ -1126,6 +1126,11 @@
   resolved "https://registry.yarnpkg.com/@oxc-transform/binding-win32-x64-msvc/-/binding-win32-x64-msvc-0.86.0.tgz#5c20417fa8eb190d96b2b951fb46711060d2fd29"
   integrity sha512-M1eCl8xz7MmEatuqWdr+VdvNCUJ+d4ECF+HND39PqRCVkaH+Vl1rcyP5pLILb2CB/wTb2DMvZmb9RCt5+8S5TQ==
 
+"@paddle/paddle-js@^1.4.2":
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/@paddle/paddle-js/-/paddle-js-1.4.2.tgz#be9ce6fa3061abb3ab46652fdef9dc601d87da27"
+  integrity sha512-pY9jYS+g3vk6ecc7GbCsVSuBEo1Yh+hxYE4i2XoY5/ZBAZLuCkQi/80hOmSBkFoaETohOpDmurILlQdgUHUcvw==
+
 "@parcel/watcher-android-arm64@2.5.1":
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/@parcel/watcher-android-arm64/-/watcher-android-arm64-2.5.1.tgz#507f836d7e2042f798c7d07ad19c3546f9848ac1"

@@ -34,19 +34,21 @@
     </section>
 
     <!-- Featured Courses -->
-    <section
-      v-if="route.path.includes('/courses')"
-      class="max-w-7xl mx-auto px-4"
-    >
+    <section class="max-w-7xl mx-auto px-4">
       <h2 class="text-center text-2xl md:text-3xl font-semibold py-10">
         Featured Single Courses
       </h2>
-      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <div class="flex gap-4">
         <Course v-for="(course, i) in cFeatured" :key="i" :course="course" />
       </div>
 
       <div class="flex justify-center py-10">
-        <Button type="link" appearance="primary" link="/courses/single">
+        <Button
+          type="link"
+          class="text-white"
+          appearance="primary"
+          link="/courses/single"
+        >
           View All Courses
         </Button>
       </div>
@@ -266,7 +268,7 @@ const cFeatured = computed(() => props.featured.slice(0, 4))
 // methods -> functions
 const getURL = (hub) => {
   if (isBook(hub)) return `/books/${hub.slug}`
-  if (isCourse(hub)) return `/courses/${hub.slug}`
+  if (isCourse(hub)) return `/${hub.slug}`
   if (isPDF(hub)) return `/resources/${hub.slug}`
   return `/${hub.slug}`
 }

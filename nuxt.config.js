@@ -206,6 +206,7 @@ export default defineNuxtConfig({
       RECAPTCHA_SITE_KEY: process.env.RECAPTCHA_SITE_KEY,
       ENCHARGE_KEY: process.env.ENCHARGE_KEY,
       MB_API_URL: process.env.MB_API_URL,
+      PADDLE_TOKEN: process.env?.PADDLE_TOKEN,
     },
   },
 
@@ -217,13 +218,7 @@ export default defineNuxtConfig({
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: {
-    dirs: [
-      // '~/components/atoms',
-      // '~/components/molecules',
-      // '~/components/organisms',
-      // '~/components/templates',
-      '~/components/hubs',
-    ],
+    dirs: ['~/components/hubs', '~/components'],
   },
   dir: {
     app: 'app',
@@ -233,196 +228,9 @@ export default defineNuxtConfig({
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: ['@pinia/nuxt', '@nuxtjs/tailwindcss'],
 
-  // feed: [
-  //   {
-  //     path: '/feed.xml', // The route to your feed.
-  //     async create(feed) {
-  //       feed.options = {
-  //         title: 'Mastering Backend',
-  //         link: 'https://masteringbackend.com/feed.xml',
-  //         description: 'This is Mastering Backend feeds!',
-  //       }
-
-  //       const posts = await Utils.getPosts()
-
-  //       posts.forEach((post) => {
-  //         feed.addItem({
-  //           title: post.title,
-  //           id: `https://masteringbackend.com/posts/${post.slug}`,
-  //           link: `https://masteringbackend.com/posts/${post.slug}`,
-  //           description: post.excerpt,
-  //           content: post.content,
-  //           date: new Date(post.publishedAt),
-  //           updated: new Date(post.updatedAt),
-  //           author: {
-  //             name: post?.author?.name,
-  //             link:
-  //               'https://masteringbackend.com/authors/' + post?.author?.slug,
-  //           },
-  //         })
-
-  //         Array.isArray(post?.categories) &&
-  //           post.categories.forEach((category) => {
-  //             feed.addCategory(category.title)
-  //           })
-
-  //         feed.addContributor({
-  //           name: post?.author?.name,
-  //         })
-  //       })
-  //     },
-  //     cacheTime: 1000 * 60 * 15, // How long should the feed be cached
-  //     type: 'rss2', // Can be: rss2, atom1, json1
-  //   },
-  // ],
-
-  // robots: {
-  //   disallow: ['/_nuxt'],
-  //   rules: [
-  //     {
-  //       UserAgent: '*',
-  //       Disallow: 'https://app.masteringbackend.com/',
-  //     },
-
-  //     {
-  //       UserAgent: '*',
-  //       Disallow: 'https://api.masteringbackend.com/',
-  //     },
-  //     {
-  //       UserAgent: '*',
-  //       Disallow: 'https://store.masteringbackend.com/',
-  //     },
-
-  //     {
-  //       UserAgent: '*',
-  //       Disallow: '/cdn-cgi/*',
-  //     },
-  //   ],
-  // },
-  // recaptcha: {
-  //   siteKey: process.env.RECAPTCHA_SITE_KEY,
-  //   version: 3,
-  //   hideBadge: true,
-  //   mode: 'basic',
-  // },
-
   serverMiddleware: {
     '/api': '~/api',
   },
-
-  // redirect: [
-  //   // Redirect opt`ions here
-  //   // {
-  //   //   from: '^/posts/backend-development-the-ultimate-guide(.*)$',
-  //   //   to: 'https://blog.boot.dev/backend/become-backend-developer',
-  //   //   statusCode: 301,
-  //   // },
-
-  //   {
-  //     from: '^/courses/rust-for-backend-engineering(.*)$',
-  //     to: 'https://masteringbackend.com/courses/become-a-rust-backend-engineer/$1',
-  //     statusCode: 301,
-  //   },
-
-  //   {
-  //     from: '^/jobs/(.*)$',
-  //     to: 'https://getbackendjobs.com?ref=masteringbackend',
-  //     statusCode: 301,
-  //   },
-
-  //   {
-  //     from: '^/posts/posts(.*)$',
-  //     to: '/posts$1',
-  //     statusCode: 301,
-  //   },
-  //   {
-  //     from: '^/courses/text/advanced-docker(.*)$',
-  //     to: '/advanced-docker',
-  //     statusCode: 301,
-  //   },
-
-  //   {
-  //     from: 'http://academy.masteringbackend.com(.*)$',
-  //     to: '/academy',
-  //     statusCode: 301,
-  //   },
-
-  //   {
-  //     from: 'https://v1.masteringbackend.com(.*)$',
-  //     to: 'https://masteringbackend.com$1',
-  //     statusCode: 301,
-  //   },
-
-  //   {
-  //     from: '^/courses/video/advanced-docker(.*)$',
-  //     to: '/advanced-docker',
-  //     statusCode: 301,
-  //   },
-  //   {
-  //     from: '^/posts/introduction-to-backend-development(.*)$',
-  //     to: '/posts/getting-started-with-backend-development',
-  //     statusCode: 301,
-  //   },
-
-  //   {
-  //     from: '^/posts/laravel-breeze-tutorial-the-definitive-guide(.*)$',
-  //     to: '/resources/laravel/laravel-breeze-tutorial-the-definitive-guide',
-  //     statusCode: 301,
-  //   },
-  //   {
-  //     from: '^/posts/laravel-framework-the-ultimate-guide-2021(.*)$',
-  //     to: '/posts/laravel-framework-the-ultimate-guide',
-  //     statusCode: 301,
-  //   },
-  //   {
-  //     from: '^/category/(.*)$',
-  //     to: '/categories/$1',
-  //     statusCode: 301,
-  //   },
-
-  //   {
-  //     from: '^/jobs(.*)$',
-  //     to: 'https://getbackendjobs.com?ref=masteringbackend',
-  //     statusCode: 301,
-  //   },
-
-  //   {
-  //     from: '^/slack(.*)$',
-  //     to: '/community',
-  //     statusCode: 301,
-  //   },
-
-  //   {
-  //     from: '^/write-for-us(.*)$',
-  //     to: '/contact',
-  //     statusCode: 301,
-  //   },
-  //   {
-  //     from: '^/aboutus(.*)$',
-  //     to: '/about',
-  //     statusCode: 301,
-  //   },
-
-  //   {
-  //     from: '^/live(.*)$',
-  //     to: 'https://backendweekly.dev/podcasts?ref=masteringbackend',
-  //     statusCode: 301,
-  //   },
-  // ],
-
-  // sitemap: {
-  //   hostname: 'https://masteringbackend.com',
-  //   exclude: ['/maintenance'],
-  //   cacheTime: 1000 * 60 * 60 * 2,
-  //   trailingSlash: false,
-  //   gzip: true,
-  //   async routes() {
-  //     const posts = await Utils.getPosts()
-  //     return posts.map((post) => {
-  //       return `posts/${post.slug}`
-  //     })
-  //   },
-  // },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
@@ -446,20 +254,8 @@ export default defineNuxtConfig({
     SEGMENT_USE_ROUTER: process.env.SEGMENT_USE_ROUTER || true,
   },
 
-  hooks: {
-    'pages:extend'(routes) {
-      // middleware: 'keepParams',
-    },
-  },
+  hooks: {},
 
-  // PWA module configuration: https://go.nuxtjs.dev/pwa
-  // pwa: {
-  //   manifest: {
-  //     lang: 'en',
-  //   },
-  // },
-
-  // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     postcss: {
       plugins: {

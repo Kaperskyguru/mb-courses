@@ -1,5 +1,7 @@
 <template>
-  <nuxt-link to="/">
+  <nuxt-link
+    :to="`https://masteringbackend.com?ref=${$route.query?.ref ?? 'courses'}`"
+  >
     <img
       v-if="isWhite"
       src="~/assets/White.png"

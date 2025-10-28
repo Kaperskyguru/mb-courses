@@ -43,6 +43,7 @@
       <Button
         type="link"
         appearance="primary"
+        class="text-white"
         target="_blank"
         :href="`https://app.masteringbackend.com/courses/${slug}`"
       >

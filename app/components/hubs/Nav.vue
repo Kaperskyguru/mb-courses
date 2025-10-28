@@ -22,16 +22,10 @@
         :class="{ 'flex flex-col mt-4 xl:mt-0': show }"
       >
         <ul class="flex flex-col xl:flex-row xl:items-center">
-          <li
-            class="relative pr-7"
-            :class="{
-              'font-bold text-transparent bg-clip-text bg-[#0a083b]':
-                isActive('/'),
-            }"
-          >
+          <li class="relative pr-7">
             <a
               :href="`https://blog.masteringbackend.com/?ref=${
-                $route.query?.ref ?? 'hubs'
+                $route.query?.ref ?? 'courses'
               }`"
               class="text-gray-600 text-sm font-medium hover:text-[#0a083b] transition-colors"
               >Blog</a
@@ -41,54 +35,38 @@
             class="relative pr-7"
             :class="{
               'font-bold text-transparent bg-clip-text bg-[#0a083b]':
-                isActive('/courses'),
+                isActive('/'),
             }"
           >
             <a
-              :href="`https://masteringbackend.com/courses?ref=${
-                $route.query?.ref ?? 'hubs'
-              }`"
+              :href="`/?ref=${$route.query?.ref ?? 'courses'}`"
               class="text-gray-600 text-sm font-medium hover:text-[#0a083b] transition-colors"
               >Courses</a
             >
           </li>
-          <li
-            class="relative pr-7"
-            :class="{
-              'font-bold text-transparent bg-clip-text bg-[#0a083b]':
-                isActive('/books'),
-            }"
-          >
+          <li class="relative pr-7">
             <a
-              :href="`/books?ref=${$route.query?.ref ?? 'hubs'}`"
+              :href="`https://hubs.masteringbackend.com/books?ref=${
+                $route.query?.ref ?? 'courses'
+              }`"
               class="text-gray-600 text-sm font-medium hover:text-[#0a083b] transition-colors"
               >Books</a
             >
           </li>
-          <li
-            class="relative pr-7"
-            :class="{
-              'font-bold text-transparent bg-clip-text bg-[#0a083b]':
-                isActive('/'),
-            }"
-          >
-            <nuxt-link
-              href="/"
+          <li class="relative pr-7">
+            <a
+              :href="`https://hubs.masteringbackend.com?ref=${
+                $route.query?.ref ?? 'courses'
+              }`"
               class="text-gray-600 text-sm font-medium hover:text-[#0a083b] transition-colors"
-              >Hubs</nuxt-link
+              >Hubs</a
             >
           </li>
-          <li
-            class="relative pr-7"
-            :class="{
-              'font-bold text-transparent bg-clip-text bg-[#0a083b]':
-                isActive('/podcasts'),
-            }"
-          >
+          <li class="relative pr-7">
             <a
               class="text-gray-600 text-sm font-medium hover:text-[#0a083b] transition-colors"
               target="_blank"
-              href="https://backendweekly.dev/podcasts?ref=hubs&utm_source=hubs&utm_medium=hubs&utm_campaign=footer"
+              href="https://backendweekly.dev/podcasts?ref=courses&utm_source=courses&utm_medium=courses&utm_campaign=footer"
               >Podcasts</a
             >
           </li>
@@ -100,16 +78,10 @@
               >Our Store</a
             >
           </li>
-          <li
-            class="relative pr-7"
-            :class="{
-              'font-bold text-transparent bg-clip-text bg-[#0a083b]':
-                isActive('/community'),
-            }"
-          >
+          <li class="relative pr-7">
             <a
               :href="`https://masteringbackend.com/community?ref=${
-                $route.query?.ref ?? 'hubs'
+                $route.query?.ref ?? 'courses'
               }`"
               class="text-gray-600 text-sm font-medium hover:text-[#0a083b] transition-colors"
               >Community</a
@@ -121,7 +93,7 @@
           <a
             target="_blank"
             :href="`https://app.masteringbackend.com?ref=${
-              $route.query?.ref ?? 'hubs'
+              $route.query?.ref ?? 'courses'
             }`"
             class="bg-[#0e1f33] !text-white rounded-lg px-3 py-3 transition-colors"
           >

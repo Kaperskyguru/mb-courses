@@ -29,7 +29,7 @@ export const useHubsStore = defineStore('hubs', {
     // getHubs: (state) => () => state.hubs,
     getAllPDFs: (state) => () => state.pdfs,
     getAllBooks: (state) => () => state.books,
-    getCourses: (state) => () => state.courses,
+    getAllCourses: (state) => () => state.courses,
     getRecentHubs: (state) => () => state.recent_hubs,
     getCategoryHubs: (state) => () => state.category_hubs,
     getChapterBySlug: (state) => (slug) =>
@@ -88,11 +88,15 @@ export const useHubsStore = defineStore('hubs', {
       }
     },
 
-    async fetchCourseContent(slug) {
+    async fetchCourseContent({ slug }) {
       try {
         const api = useStrapi()
         const config = useRuntimeConfig()
-        return await api(`${config.public.MB_API_URL}/roadmap/${slug}`)
+        const course = await $fetch(
+          `${config.public.MB_API_URL}/roadmap/${slug}`
+        )
+
+        return course
       } catch (error) {
         console.error(error)
       }
@@ -104,7 +108,8 @@ export const useHubsStore = defineStore('hubs', {
         const config = useRuntimeConfig()
         const url =
           config.public.MB_API_URL ?? 'https://api.masteringbackend.com'
-        return await api(url + '/courses')
+        const data = await $fetch(url + '/public/courses')
+        return data
       } catch (error) {
         console.error(error)
       }
