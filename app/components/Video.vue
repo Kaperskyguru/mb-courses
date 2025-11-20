@@ -235,10 +235,10 @@ export default {
         })
         if (!this.isDev())
           // eslint-disable-next-line no-undef
-          fbq('track', 'Lead')
+          // fbq('track', 'Lead')
 
-        // Set local storage
-        localStorage.setItem('MB_Lead_User', this.$route.params?.slug ?? '')
+          // Set local storage
+          localStorage.setItem('MB_Lead_User', this.$route.params?.slug ?? '')
       } catch (error) {
         this.isLocked = false
         this.loading = false

@@ -863,9 +863,10 @@ function getImage(topic) {
 }
 
 function track(name, data = {}) {
-  if (!isDev())
-    // eslint-disable-next-line no-undef
-    fbq('track', name, data)
+  if (!isDev()) {
+  }
+  // eslint-disable-next-line no-undef
+  // fbq('track', name, data)
 }
 
 function isDev() {
