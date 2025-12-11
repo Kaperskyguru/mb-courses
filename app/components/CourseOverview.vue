@@ -908,6 +908,9 @@ function buynow(package1 = 'single') {
 
   if (!priceId) return router.push('#' + enchargeTag.value)
 
+  window.open('https://app.masteringbackend.com/cpayment?id=' + priceId)
+  return
+
   paddle.value?.Checkout.open({
     settings: {
       allowedPaymentMethods: [
