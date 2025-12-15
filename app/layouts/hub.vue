@@ -1,6 +1,6 @@
 <template>
   <main>
-    <div class="notif">
+    <!-- <div class="notif">
       <h2 class="flex justify-center items-center gap-1.5 text-base font-bold">
         <span class="text-black">
           Unlock Your Python Backend Career: Build 30 Projects in 30 Days.</span
@@ -14,7 +14,7 @@
           Join now for just $54
         </a>
       </h2>
-    </div>
+    </div> -->
 
     <header>
       <Nav />

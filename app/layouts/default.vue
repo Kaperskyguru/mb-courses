@@ -1,6 +1,6 @@
 <template>
   <main class="bg-[#f7f5fa] w-full">
-    <div class="project30">
+    <!-- <div class="project30">
       <h2
         class="pt-2 flex justify-center items-center gap-1.5 text-base font-bold text-black"
       >
@@ -14,7 +14,7 @@
           Join now for just $54
         </a>
       </h2>
-    </div>
+    </div> -->
 
     <header>
       <Nav />
