@@ -908,14 +908,14 @@ function buynow(package1 = 'single') {
 
   if (!priceId) return router.push('#' + enchargeTag.value)
 
-  window.open(
-    `https://app.masteringbackend.com/cpayment?id=${priceId}&package1=${package1}&slug=${
-      slug.value
-    }&team=${team.value}&ref=${
-      route.query?.ref ?? route.query?.utm_source ?? route.query?.source
-    }`
-  )
-  return
+  // window.open(
+  //   `https://app.masteringbackend.com/cpayment?id=${priceId}&package1=${package1}&slug=${
+  //     slug.value
+  //   }&team=${team.value}&ref=${
+  //     route.query?.ref ?? route.query?.utm_source ?? route.query?.source
+  //   }`
+  // )
+  // return
 
   paddle.value?.Checkout.open({
     settings: {
