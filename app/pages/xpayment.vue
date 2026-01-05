@@ -10,8 +10,18 @@
   </div>
 </template>
 <script setup>
+import { initializePaddle } from '@paddle/paddle-js'
+
+definePageMeta({
+  layout: 'payment',
+})
+
 const paddle = ref(null)
 const config = useRuntimeConfig()
+
+function isDev() {
+  return ['dev', 'development', 'staging'].includes(process.env.NODE_ENV)
+}
 
 onMounted(() => {
   const PADDLE_ENVIRONMENT = isDev() ? 'sandbox' : 'production'
@@ -42,6 +52,7 @@ onMounted(() => {
 
 // Callback to open a checkout
 const openCheckout = (priceId, data) => {
+  console.log('Opening checkout for priceId:', priceId)
   paddle.value?.Checkout.open({
     settings: {
       allowedPaymentMethods: [
@@ -53,7 +64,7 @@ const openCheckout = (priceId, data) => {
         'ideal',
         'paypal',
       ],
-      theme: theme?.includes('dark') ? 'dark' : 'light',
+      theme: 'dark',
     },
     discountCode: 'AIEARLYBIRD',
     items: [{ priceId }],
