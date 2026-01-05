@@ -793,7 +793,7 @@ onMounted(() => {
   const PADDLE_ENVIRONMENT = isDev() ? 'sandbox' : 'production'
 
   initializePaddle({
-    token: config.public.PADDLE_TOKEN ?? 'live_e6671360951102dbb63e7be42b2',
+    token: config.public.PADDLE_TOKEN,
     eventCallback: (data) => {
       switch (data.name) {
         case 'checkout.closed':
